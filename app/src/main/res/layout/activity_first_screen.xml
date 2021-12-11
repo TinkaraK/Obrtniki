@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstScreenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="123dp"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="obrtniki.si"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obiskovalci"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:id="@+id/obiskovalecInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Vpiši ime"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/obiskovalecButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prični z iskanjem"
+            android:layout_marginHorizontal="48dp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Obrtniki"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/obrtnikButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prijavi/Registriraj se"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="48dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

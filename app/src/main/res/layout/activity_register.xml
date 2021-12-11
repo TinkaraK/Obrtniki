@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="32dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registracija"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"/>
+
+
+        <EditText
+            android:id="@+id/naziv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Naziv podjetja"
+            android:layout_marginTop="64dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/naslov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Naslov podjetja"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/posta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Pošta podjetja"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Email podjetja"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/telefonska"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Telefonska številka podjetja"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/davcna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Davčna številka podjetja"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/registerPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Geslo"
+            android:gravity="center_horizontal"/>
+
+        <EditText
+            android:id="@+id/repeatRegisterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Ponovno vpišite geslo"
+            android:gravity="center_horizontal"/>
+
+
+
+
+        <Button
+            android:id="@+id/registerButtonR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registracija" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ste že registrirani?"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"/>
+
+        <Button
+            android:id="@+id/loginButtonR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prijavi se" />
+
+    </LinearLayout>
+
+</ScrollView>
