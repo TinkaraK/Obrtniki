@@ -1,65 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical"
-    android:layout_margin="32dp"
-    android:layout_gravity="center_horizontal">
+    tools:context=".LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Obrtniki, dobrodošli"
-        android:gravity="center"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"/>
-
-
-    <EditText
-        android:id="@+id/loginEmail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="email"
-        android:layout_marginTop="64dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="123dp"
+        android:padding="32dp">
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="geslo"
-        android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="obrtniki.si"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dobrodošli"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="64dp"
+            android:textSize="30sp"/>
 
-    <Button
-        android:id="@+id/loginButtonL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Prijava" />
+        <EditText
+            android:id="@+id/obiskovalecEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Vpiši email"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Še niste registrirani?"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"/>
+        <EditText
+            android:id="@+id/obiskovalecPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Vpišite geslo"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"/>
 
+        <Button
+            android:id="@+id/obiskovalecButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prijava"
+            android:layout_marginHorizontal="48dp"/>
 
-    <Button
-        android:id="@+id/registerButtonL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registriraj se" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Še niste registrirani?"
+            />
 
+        <TextView
+            android:id="@+id/registerInstead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Registriraj se"
+            />
 
-</LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

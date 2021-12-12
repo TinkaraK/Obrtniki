@@ -1,13 +1,13 @@
 package com.example.obrtniki;
 
-public class TipObrtnika {
+public class TradeType {
     private int id;
     private String naziv;
     private int thumbnail;
 
-    public TipObrtnika(){
+    public TradeType(){
     }
-    public TipObrtnika(int id, String naziv, int thumbnail){
+    public TradeType(int id, String naziv, int thumbnail){
         this.id = id;
         this.naziv = naziv;
         this.thumbnail = thumbnail;

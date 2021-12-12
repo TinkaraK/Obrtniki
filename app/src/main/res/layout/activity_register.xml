@@ -1,131 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
-    android:orientation="vertical"
-    android:scrollbarAlwaysDrawVerticalTrack="true">
+    tools:context=".RegisterActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginHorizontal="32dp">
+        android:padding="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="123dp">
+
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="Registracija"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"/>
-
+            android:textAlignment="center"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/naziv"
+            android:id="@+id/obiskovalecImeR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Naziv podjetja"
-            android:layout_marginTop="64dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
-        <EditText
-            android:id="@+id/naslov"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Naslov podjetja"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="Vpiši ime"
+            android:inputType="textPersonName" />
+
         <EditText
-            android:id="@+id/posta"
+            android:id="@+id/obiskovalecPriimekR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Pošta podjetja"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="Vpiši priimek"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/obiskovalecEmailR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:hint="Email podjetja"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="Vpiši email"
+            android:inputType="textEmailAddress" />
+
         <EditText
-            android:id="@+id/telefonska"
+            android:id="@+id/obiskovalecPasswordR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Telefonska številka podjetja"
             android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="Vpišite geslo"
+            android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/davcna"
+        <CheckBox
+            android:id="@+id/obrtnikCheckbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Davčna številka podjetja"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"/>
-
-        <EditText
-            android:id="@+id/registerPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Geslo"
-            android:gravity="center_horizontal"/>
-
-        <EditText
-            android:id="@+id/repeatRegisterPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Ponovno vpišite geslo"
-            android:gravity="center_horizontal"/>
-
-
-
+            android:text="Sem obrtnik" />
 
         <Button
-            android:id="@+id/registerButtonR"
+            android:id="@+id/obiskovalecRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registracija" />
+            android:layout_marginHorizontal="48dp"
+            android:text="Registriraj se" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ste že registrirani?"
-            android:gravity="center_horizontal"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"/>
-
-        <Button
-            android:id="@+id/loginButtonR"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/obiskovalecLoginInstead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prijavi se" />
-
+            android:text="Prijavi se"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
