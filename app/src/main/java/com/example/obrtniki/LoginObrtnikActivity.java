@@ -5,19 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginObrtnikActivity extends AppCompatActivity {
     Button register, login;
     EditText email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_obrtnik);
         Context context = getApplicationContext();
 
         email = findViewById(R.id.loginEmail);
@@ -27,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         register = findViewById(R.id.registerButtonL);
 
         register.setOnClickListener(v -> {
-            Intent intent = new Intent(context, RegisterActivity.class);
+            Intent intent = new Intent(context, RegisterObrtnikActivity.class);
             startActivity(intent);
         });
 

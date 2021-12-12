@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterObrtnikActivity extends AppCompatActivity {
     EditText nazivET, naslovET, postaET, emailET, telefonET, gesloET, ponoviGesloET, davcnaET;
     Button loginButton, registerButton;
     Boolean canRegister = false;
@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_obrtnik);
 
         context = getApplicationContext();
 
@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LoginActivity.class);
+                Intent intent = new Intent(context, LoginObrtnikActivity.class);
                 startActivity(intent);
             }
         });
