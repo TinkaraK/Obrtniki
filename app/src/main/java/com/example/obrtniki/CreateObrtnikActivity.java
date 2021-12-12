@@ -10,16 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterObrtnikActivity extends AppCompatActivity {
-    EditText nazivET, naslovET, postaET, emailET, telefonET, gesloET, ponoviGesloET, davcnaET;
-    Button loginButton, registerButton;
+public class CreateObrtnikActivity extends AppCompatActivity {
+    EditText nazivET, naslovET, postaET, emailET, telefonET, davcnaET;
+    Button createButton, registerButton;
     Boolean canRegister = false;
     public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_obrtnik);
+        setContentView(R.layout.activity_create_obrtnik);
 
         context = getApplicationContext();
 
@@ -29,15 +29,14 @@ public class RegisterObrtnikActivity extends AppCompatActivity {
         emailET = findViewById(R.id.email);
         telefonET = findViewById(R.id.telefonska);
         davcnaET = findViewById(R.id.davcna);
-        gesloET = findViewById(R.id.registerPassword);
-        ponoviGesloET = findViewById(R.id.repeatRegisterPassword);
 
-        loginButton = findViewById(R.id.loginButtonR);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        createButton = findViewById(R.id.loginButtonR);
+        createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LoginObrtnikActivity.class);
-                startActivity(intent);
+                // verjetno odpre obrtnikov profil?
+                //Intent intent = new Intent(context, LoginObrtnikActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -113,41 +112,18 @@ public class RegisterObrtnikActivity extends AppCompatActivity {
             davcna = davcnaET.getText().toString();
             canRegister = true;
         }
-        String geslo = "";
-        if (gesloET.getText().toString().isEmpty()) {
-            //        Toast.makeText(context, "Vpišite geslo", Toast.LENGTH_SHORT).show();
-            canRegister = false;
-        }
-        else {
-            geslo = gesloET.getText().toString();
-            canRegister = true;
-        }
-        String gesloRepeat = "";
-        if (ponoviGesloET.getText().toString().isEmpty()) {
-        //    Toast.makeText(context, "Ponovno vpišite geslo", Toast.LENGTH_SHORT).show();
-            canRegister = false;
-        }
-        else {
-            gesloRepeat = ponoviGesloET.getText().toString();
-            canRegister = true;
-        }
-
-        if (geslo.matches(gesloRepeat))
-            canRegister = true;
-        else {
-            canRegister = false;
-            Toast.makeText(context, "Gesli se ne ujemata", Toast.LENGTH_SHORT).show();
-        }
 
         if (canRegister) {
-            startRegistering(naziv, naslov, posta, email, davcna, telefonska, geslo);
+            createObrtnik(naziv, naslov, posta, email, davcna, telefonska);
         }
         else {
             Toast.makeText(context, "Prosimo izpolnite vsa polja", Toast.LENGTH_SHORT).show();
         }
     }
 
-    void startRegistering(String naziv, String naslov, String posta, String email, String davcna, String telefonska, String geslo) {
-        Toast.makeText(context, "Registracija poteka", Toast.LENGTH_SHORT).show();
+    void createObrtnik(String naziv, String naslov, String posta, String email, String davcna, String telefonska) {
+        Toast.makeText(context, "Ustvarjam obrtnika", Toast.LENGTH_SHORT).show();
     }
+
+
 }

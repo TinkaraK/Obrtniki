@@ -8,9 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,10 +17,10 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext ;
-    private List<TipObrtnika> mData ;
+    private List<TradeType> mData ;
 
 
-    public RecyclerViewAdapter(Context mContext, List<TipObrtnika> mData) {
+    public RecyclerViewAdapter(Context mContext, List<TradeType> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }

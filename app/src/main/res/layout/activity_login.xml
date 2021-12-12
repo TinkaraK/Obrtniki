@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginObiskovalecActivity">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Obiskovalci"
+            android:text="Dobrodošli"
             android:gravity="center_horizontal"
             android:layout_marginTop="64dp"
             android:textSize="30sp"/>
@@ -76,20 +76,5 @@
             android:text="Registriraj se"
             />
 
-        <TextView
-            android:id="@+id/loginRegisterObrtnik"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ste obrtnik?"
-            android:gravity="center_horizontal"
-            />
-
-        <Button
-            android:id="@+id/obrtnikButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Prijavi se"
-            android:gravity="center_horizontal"
-            android:layout_marginHorizontal="48dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

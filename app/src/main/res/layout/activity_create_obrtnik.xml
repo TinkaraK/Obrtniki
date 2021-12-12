@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterObrtnikActivity"
+    tools:context=".CreateObrtnikActivity"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true">
     <LinearLayout
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registracija"
+            android:text="Registracija obrtnika"
             android:gravity="center"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"/>
@@ -83,27 +83,6 @@
             android:layout_marginTop="16dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"/>
-
-        <EditText
-            android:id="@+id/registerPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Geslo"
-            android:gravity="center_horizontal"/>
-
-        <EditText
-            android:id="@+id/repeatRegisterPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:hint="Ponovno vpišite geslo"
-            android:gravity="center_horizontal"/>
-
-
-
 
         <Button
             android:id="@+id/registerButtonR"
