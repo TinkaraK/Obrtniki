@@ -33,6 +33,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/obrtniki_title" />
 
+    <Button
+        android:id="@+id/filtri_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:backgroundTint="#7E7878"
+        android:drawableTint="#FFFFFF"
+        android:text="filtri"
+        app:iconTint="#131010"
+        app:layout_constraintBottom_toTopOf="@id/searchBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/obrtniki_title" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_listObrtniki"
         android:layout_width="match_parent"
