@@ -66,6 +66,4 @@ public class TradeTypesListActivity extends AppCompatActivity {
 
         myrv.setAdapter(myAdapter);
     }
-
-
 }

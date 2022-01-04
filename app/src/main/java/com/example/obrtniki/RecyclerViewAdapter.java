@@ -43,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 Log.i("tinkara", mData.get(position).getNaziv());
-                Intent intent = new Intent(mContext, MainActivity.class);
+                Intent intent = new Intent(mContext, SelectedObrtListActivity.class);
                 intent.putExtra("tip", mData.get(position).getId());
                 intent.putExtra("naziv", mData.get(position).getNaziv());
                 mContext.startActivity(intent);
@@ -85,6 +85,4 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
     }
-
-
 }
