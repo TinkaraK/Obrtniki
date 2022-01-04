@@ -122,7 +122,7 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
 
                     @Override
                     public void afterTextChanged(Editable s) {
-                        filter(s.toString());
+                        search(s.toString());
                     }
                 });
 
@@ -140,20 +140,26 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
         filtriDialog.show(getSupportFragmentManager(), "Filtri");
     }
 
-    @Override
-    public void applyTexts(String username) {
-        searchView.setText(username);
-    }
-
-    private void filter(String text){
-        ArrayList<Obrtnik> filteredList = new ArrayList<>();
+    private void search(String text){
+        ArrayList<Obrtnik> searchList = new ArrayList<>();
 
         for(Obrtnik obr : listObrtnikov){
             if (obr.getCompany_name().toLowerCase().startsWith(text.toLowerCase())){
-                filteredList.add(obr);
+                searchList.add(obr);
             }
+        }
+        myAdapter.filterList(searchList);
+    }
+
+    @Override
+    public void applyTexts(int reg_from_spn, int ocn_from_spn, int cen_from_spn) {
+        ArrayList<Obrtnik> filteredList = new ArrayList<>();
+        for( Obrtnik obr : listObrtnikov) {
+            if ((reg_from_spn == 0 || obr.region_id == reg_from_spn)
+                    & (ocn_from_spn == 0 || obr.avg_rating > ocn_from_spn / 2.0)
+                    & (cen_from_spn == 0 || obr.price_range_id == cen_from_spn))
+                filteredList.add(obr);
         }
         myAdapter.filterList(filteredList);
     }
-
 }

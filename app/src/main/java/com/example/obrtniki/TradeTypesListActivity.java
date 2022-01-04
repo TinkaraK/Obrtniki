@@ -35,7 +35,7 @@ public class TradeTypesListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trade_types_list);
         context = getApplicationContext();
-/*
+
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             loginResponse = (LoginResponse) intent.getSerializableExtra("data");
@@ -49,7 +49,7 @@ public class TradeTypesListActivity extends AppCompatActivity {
 
         dobrodosli = findViewById(R.id.dobrodosli);
         dobrodosli.setText("Dobrodošli, " + loginResponse.getFirst_name());
-*/
+
         listObrtnikov = new ArrayList<>();
         listObrtnikov.add(new TradeType(1, "arhitekti", R.drawable.arhitekt));
         listObrtnikov.add(new TradeType(2, "električarji", R.drawable.elektricar));
