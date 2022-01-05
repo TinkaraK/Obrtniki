@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText obiskovalecEmail, obiskovalecPassword;
     TextView registerInstead;
     Context context;
+    int loggedInId;
+    SharedPreferences sharedPref;
 
     Boolean canRegister = false;
 
@@ -28,12 +31,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-         context = getApplicationContext();
+        context = getApplicationContext();
 
         obiskovalecEmail = findViewById(R.id.obiskovalecEmail);
         obiskovalecPassword = findViewById(R.id.obiskovalecPassword);
         obiskovalciButton = findViewById(R.id.obiskovalecButton);
         registerInstead = findViewById(R.id.registerInstead);
+        sharedPref = context.getSharedPreferences(
+                "preferences", Context.MODE_PRIVATE);
 
         registerInstead.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +92,10 @@ public class LoginActivity extends AppCompatActivity {
                     String message = "Prijava je uspela.";
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse = response.body();
+                    loggedInId = Integer.parseInt(loginResponse.getId());
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putInt("userId", loggedInId);
+                    editor.apply();
                     startActivity(new Intent(context, TradeTypesListActivity.class)
                             .putExtra("data", loginResponse)
                     );
