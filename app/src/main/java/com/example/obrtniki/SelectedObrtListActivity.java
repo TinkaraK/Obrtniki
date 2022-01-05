@@ -49,7 +49,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SelectedObrtListActivity extends AppCompatActivity implements FiltriDialog.FilterDialogListener {
+public class SelectedObrtListActivity extends AppCompatActivity implements FiltriDialog.FilterDialogListener, RecyclerViewAdapterObrtniki.OnClickListener {
     TextView title;
     EditText searchView;
     Button button;
@@ -75,6 +75,7 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
 
         searchView = findViewById(R.id.searchBox);
         context = getApplicationContext();
+        myAdapter = new RecyclerViewAdapterObrtniki(context, listObrtnikov, this);
         button = (Button) findViewById(R.id.filtri_button);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -108,9 +109,7 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
                         listObrtnikov.add(obrtnik);
                 }
                 RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerView_listObrtniki);
-                myAdapter = new RecyclerViewAdapterObrtniki(context, listObrtnikov);
                 myrv.setLayoutManager(new GridLayoutManager(context, 1));
-
                 myrv.setAdapter(myAdapter);
 
                 searchView.addTextChangedListener(new TextWatcher() {
@@ -161,5 +160,13 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
                 filteredList.add(obr);
         }
         myAdapter.filterList(filteredList);
+    }
+
+    @Override
+    public void onRowClick(int position) {
+        Obrtnik obr = myAdapter.mData.get(position);
+        /*Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("id", obr.getId());
+        startActivity(intent);*/
     }
 }

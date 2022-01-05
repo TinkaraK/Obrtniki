@@ -20,8 +20,10 @@ import java.io.FileNotFoundException;
 public class RecyclerViewAdapterObrtniki extends RecyclerView.Adapter<RecyclerViewAdapterObrtniki.MyViewHolder> {
 
     private Context mContext ;
-    private List<Obrtnik> mData ;
+    List<Obrtnik> mData ;
     List<Obrtnik> filteredUserDataList;
+    private OnClickListener mOnClickListener;
+
     String regijeA[] = {"osrednjeslovenska",
             "gorenjska",
             "goriška",
@@ -35,9 +37,10 @@ public class RecyclerViewAdapterObrtniki extends RecyclerView.Adapter<RecyclerVi
             "podravska",
             "pomurska"};
 
-    public RecyclerViewAdapterObrtniki(Context mContext, List<Obrtnik> mData) {
+    public RecyclerViewAdapterObrtniki(Context mContext, List<Obrtnik> mData, OnClickListener onClickListener) {
         this.mContext = mContext;
         this.mData = mData;
+        this.mOnClickListener = onClickListener;
     }
 
     @Override
@@ -45,7 +48,7 @@ public class RecyclerViewAdapterObrtniki extends RecyclerView.Adapter<RecyclerVi
         View view ;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
         view = mInflater.inflate(R.layout.one_row_obrtnik,parent,false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(view, mOnClickListener);
     }
 
     @Override
@@ -94,26 +97,37 @@ public class RecyclerViewAdapterObrtniki extends RecyclerView.Adapter<RecyclerVi
         notifyDataSetChanged();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView img;
         TextView naziv_obrtnika;
         TextView rating;
         TextView regija;
+        OnClickListener onClickListener;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(View itemView, OnClickListener onClickListener) {
             super(itemView);
 
             img = (ImageView) itemView.findViewById(R.id.obrtnik_img);
             naziv_obrtnika = (TextView) itemView.findViewById(R.id.obrtnik_ime);
             rating = (TextView) itemView.findViewById(R.id.rating);
             regija = (TextView) itemView.findViewById(R.id.regija_data);
+            this.onClickListener = onClickListener;
+            itemView.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            onClickListener.onRowClick(getAdapterPosition());
         }
     }
     public void Clear(){
         mData.clear();
         if (filteredUserDataList != null)
             filteredUserDataList.clear();
+    }
+
+    public interface OnClickListener{
+        void onRowClick(int position);
     }
 }
