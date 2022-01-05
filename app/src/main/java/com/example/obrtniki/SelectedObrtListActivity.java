@@ -165,6 +165,9 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
     @Override
     public void onRowClick(int position) {
         Obrtnik obr = myAdapter.mData.get(position);
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        int userId = sp.getInt("userId", 0);
+        System.out.println("USER ID: " + userId);
         /*Intent intent = new Intent(this, ViewProfileActivity.class);
         intent.putExtra("id", obr.getId());
         startActivity(intent);*/
