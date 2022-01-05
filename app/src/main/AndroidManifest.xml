@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Obrtniki"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SelectedObrtListActivity"></activity>
+        <activity android:name=".SelectedObrtListActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".CreateObrtnikActivity" />
         <activity android:name=".LoginActivity">
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <activity android:name=".TradeTypesListActivity" />
+        <activity android:name=".TradeTypesListActivity" />
     </application>
 
 </manifest>

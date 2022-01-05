@@ -16,14 +16,6 @@
         android:text="Dobrodošli"
         android:textSize="40dp"/>
 
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Odjavi se"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_tipiObrtnikov"
         android:layout_width="match_parent"
