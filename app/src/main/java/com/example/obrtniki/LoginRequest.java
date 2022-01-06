@@ -1,6 +1,6 @@
 package com.example.obrtniki;
 
-public class LoginRequest {
+public class LoginRequest { //pošljem podatke na api (body)
     private String email;
     private String password;
 

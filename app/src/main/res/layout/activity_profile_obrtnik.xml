@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView_profilna"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="20dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView_firma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_toEndOf="@+id/imageView_profilna"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="ime firme" />
+
+        <TextView
+            android:id="@+id/textView_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_firma"
+            android:layout_gravity="center_horizontal"
+            android:layout_toEndOf="@+id/imageView_profilna"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="mail" />
+
+        <TextView
+            android:id="@+id/textView_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_mail"
+            android:layout_gravity="center_horizontal"
+            android:layout_toEndOf="@+id/imageView_profilna"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="telefon" />
+
+        <TextView
+            android:id="@+id/zvezda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@+id/textView_tel"
+            android:layout_margin="40dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:text="zvezdice" />
+
+        <TextView
+            android:id="@+id/osnovni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_profilna"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/teal_700"
+            android:text="Osnovni podatki"/>
+
+        <TextView
+            android:id="@+id/textviewnaslov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/osnovni"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:text="Naslov podjetja" />
+
+        <TextView
+            android:id="@+id/regijaobr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewnaslov"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:text="Regija obratovanja"/>
+
+        <TextView
+            android:id="@+id/textViewCR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regijaobr"
+            android:layout_alignParentStart="true"
+            android:layout_margin="20dp"
+            android:textColor="@color/black"
+            android:text="Cenovni razred" />
+
+        <TextView
+            android:id="@+id/opodjetju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewCR"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:text="O podjetju"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/edittext_opis_podjetja"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:maxHeight="250dp"
+            android:layout_below="@+id/opodjetju"
+            android:layout_margin="20dp"
+            android:textSize="14sp"
+            android:inputType="none" />
+
+        <Button
+            android:id="@+id/button_uredi_op"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edittext_opis_podjetja"
+            android:layout_toEndOf="@+id/edittext_opis_podjetja"
+            android:backgroundTint="@color/black"
+            android:text="Uredi" />
+
+        <Button
+            android:id="@+id/button_shrani_op"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edittext_opis_podjetja"
+            android:layout_toEndOf="@+id/edittext_opis_podjetja"
+            android:backgroundTint="@color/black"
+            android:text="Shrani" />
+
+        <TextView
+            android:id="@+id/osotritvi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edittext_opis_podjetja"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/teal_700"
+            android:text="O storitev" />
+
+        <EditText
+            android:id="@+id/edittext_opis_storitev"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:maxWidth="250dp"
+            android:maxHeight="250dp"
+            android:inputType="none"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/osotritvi"
+            android:layout_margin="20dp"
+            android:textSize="14sp"
+            />
+
+        <Button
+            android:id="@+id/button_uredi_os"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edittext_opis_storitev"
+            android:layout_toEndOf="@+id/edittext_opis_storitev"
+            android:backgroundTint="@color/black"
+            android:text="Uredi" />
+
+        <Button
+            android:id="@+id/button_shrani_os"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edittext_opis_storitev"
+            android:layout_toEndOf="@+id/edittext_opis_storitev"
+            android:backgroundTint="@color/black"
+            android:text="Shrani" />
+
+        <Button
+            android:id="@+id/button_prikazi_slike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edittext_opis_storitev"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/black"
+            android:text="Prikaži galerijo slik" />
+
+        <Button
+            android:id="@+id/button_show_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_prikazi_slike"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/black"
+            android:text="Prikaži mnenja strank" />
+
+
+        <!-- okj-->
+
+
+
+
+</RelativeLayout>
+</ScrollView>

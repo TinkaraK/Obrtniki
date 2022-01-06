@@ -77,11 +77,12 @@ public class RegisterActivity extends AppCompatActivity {
                     canRegister = true;
                 }
                 int role = 1;
-                if (roleCB.isChecked())
+                if (roleCB.isChecked()) {
                     role = 2;
+                }
 
                 if (canRegister) {
-                    RegisterRequest registerRequest = new RegisterRequest();
+                    RegisterRequest registerRequest = new RegisterRequest(); //podattki za post
                     registerRequest.setFirstName(ime);
                     registerRequest.setLastName(priimek);
                     registerRequest.setEmail(email);

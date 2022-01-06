@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/mnenje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="Mnenje o obrtniku"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/dodajm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/mnenje"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/teal_700"
+        android:textSize="18sp"
+        android:text="Dodaj mnenje"/>
+
+    <EditText
+        android:id="@+id/editmnenje"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/dodajm"
+        android:inputType="textMultiLine"
+        android:maxHeight="100dp" />
+
+    <Button
+        android:id="@+id/dodajmnenje"
+        android:layout_toEndOf="@+id/editmnenje"
+        android:layout_alignBaseline="@+id/editmnenje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/black"
+        android:layout_margin="20dp"
+        android:text="Dodaj"/>
+
+    <TextView
+        android:id="@+id/naslovzvezd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dodajmnenje"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/teal_700"
+        android:textSize="18sp"
+        android:text="Dodaj oceno:" />
+
+
+    <Spinner
+        android:id="@+id/spinnerzvezde"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:layout_below="@id/naslovzvezd"/>
+
+    <Button
+        android:id="@+id/dodajzvezde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/naslovzvezd"
+        android:layout_toEndOf="@+id/spinnerzvezde"
+        android:backgroundTint="@color/black"
+        android:layout_margin="15dp"
+        android:text="Dodaj"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dodajzvezde">
+
+        <LinearLayout
+            android:id="@+id/layoutmnenja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mnenja strank"
+                android:layout_gravity="center"
+                android:textColor="@color/teal_700"
+                android:layout_marginBottom="10dp"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</RelativeLayout>
