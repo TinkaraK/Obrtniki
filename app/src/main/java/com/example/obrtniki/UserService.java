@@ -22,6 +22,7 @@ public interface UserService {
     @POST("craftsmen")
     Call<CreateObrtnikResponse> createObrtnik(@Body CreateObrtnikRequest createObrtnikRequest);
 
+
     @GET("craftsmen/{id}")
     Call<ViewProfileResponse> craftsmenData(@Path("id") int id);
 
@@ -41,4 +42,10 @@ public interface UserService {
 
     @PUT("craftsmen/{id}")
     Call<EditProfileResponse> craftsmenDataChanged(@Path("id") int id,@Body EditProfileRequest editProfileRequest);
+
+    /*@GET("trade-types/{id}")
+    Call<List<Obrtnik>> getObrtniki(@Path("id") Long id);*/
+    @GET("craftsmen")
+    Call<List<Obrtnik>> getObrtniki();
+
 }
