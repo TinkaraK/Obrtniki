@@ -161,7 +161,7 @@ public class ReviewsActivity extends AppCompatActivity{
                     params.setMargins(20,20,20,20); // setMargins(left, top, right, bottom)
                     m.setLayoutParams(params);
                     m.setTextSize(16);
-                    m.setTextColor(Color.parseColor("#FFFFFF"));
+                    m.setTextColor(Color.BLACK);
                     seznam.addView(m);
 
                     mnenje.setText("");

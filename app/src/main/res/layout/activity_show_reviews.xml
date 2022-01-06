@@ -32,6 +32,7 @@
     <EditText
         android:id="@+id/editmnenje"
         android:layout_width="250dp"
+        android:layout_marginStart="20dp"
         android:layout_height="50dp"
         android:layout_below="@+id/dodajm"
         android:inputType="textMultiLine"

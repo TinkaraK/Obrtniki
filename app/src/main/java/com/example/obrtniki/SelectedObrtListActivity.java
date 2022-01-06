@@ -168,8 +168,8 @@ public class SelectedObrtListActivity extends AppCompatActivity implements Filtr
         SharedPreferences sp = getApplicationContext().getSharedPreferences("preferences", Context.MODE_PRIVATE);
         int userId = sp.getInt("userId", 0);
         System.out.println("USER ID: " + userId);
-        /*Intent intent = new Intent(this, ViewProfileActivity.class);
-        intent.putExtra("id", obr.getId());
-        startActivity(intent);*/
+        Intent intent = new Intent(this, ViewProfileActivity.class);
+        intent.putExtra("id", obr.getId()).putExtra("userId",userId);
+        startActivity(intent);
     }
 }
