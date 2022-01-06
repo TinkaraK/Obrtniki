@@ -22,6 +22,7 @@
             android:textAlignment="center"
             android:textSize="40sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:gravity="center_horizontal" />
 
         <TextView
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dobrodošli"
+            android:textColor="@color/black"
             android:gravity="center_horizontal"
             android:layout_marginTop="64dp"
             android:textSize="30sp"/>
@@ -58,6 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Prijava"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/black"
             android:layout_marginHorizontal="48dp"/>
 
         <TextView
@@ -66,6 +70,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="Še niste registrirani?"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/teal_700"
             />
 
         <TextView
@@ -73,7 +80,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
             android:text="Registriraj se"
+            android:textColor="@color/teal_700"
             />
 
     </LinearLayout>

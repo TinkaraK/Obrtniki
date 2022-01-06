@@ -17,6 +17,13 @@
         <activity android:name=".SelectedObrtListActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".CreateObrtnikActivity" />
+
+        <activity android:name=".TradeTypesListActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".GalleryActivity"/>
+        <activity android:name=".ReviewsActivity"/>
+        <activity android:name=".ViewProfileActivity"/>
+        <!--dodaj nove activity ne response-->
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

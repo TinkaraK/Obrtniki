@@ -14,7 +14,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Dobrodošli"
-        android:textSize="40dp"/>
+        android:textColor="@color/black"
+        android:textSize="32sp"/>
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Odjavi se"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_tipiObrtnikov"

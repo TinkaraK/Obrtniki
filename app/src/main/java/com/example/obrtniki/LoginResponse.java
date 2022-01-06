@@ -2,12 +2,22 @@ package com.example.obrtniki;
 
 import java.io.Serializable;
 
-public class LoginResponse implements Serializable {
+public class LoginResponse implements Serializable { // te podatke dobim od api
     private String id;
     private String first_name;
     private String last_name;
     private String email;
     private String token;
+    private int role;
+    private int craftsman_id;
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
 
     public String getId() {
         return id;
@@ -47,5 +57,13 @@ public class LoginResponse implements Serializable {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public int getCraftsman_id() {
+        return craftsman_id;
+    }
+
+    public void setCraftsman_id(int craftsman_id) {
+        this.craftsman_id = craftsman_id;
     }
 }

@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                     LoginRequest loginRequest = new LoginRequest();
                     loginRequest.setEmail(email);
                     loginRequest.setPassword(password);
-                    loginUser(loginRequest);
+                    loginUser(loginRequest);//nafilam podatke
                 }
                 else {
                     Toast.makeText(context, "Prosimo izpolnite vsa polja", Toast.LENGTH_SHORT).show();
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void loginUser(LoginRequest loginRequest) {
-        Call<LoginResponse> loginResponseCall = ApiClient.getService().loginUser(loginRequest);
+        Call<LoginResponse> loginResponseCall = ApiClient.getService().loginUser(loginRequest);//klice api
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -92,6 +92,20 @@ public class LoginActivity extends AppCompatActivity {
                     String message = "Prijava je uspela.";
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse = response.body();
+
+                    if (loginResponse.getRole() == 1) {
+                        startActivity(new Intent(context, TradeTypesListActivity.class)
+                                .putExtra("data", loginResponse)
+                        );
+                        finish();
+                    }
+                    else if (loginResponse.getRole() == 2) {
+                        startActivity(new Intent(context, CreateObrtnikActivity.class)
+                                .putExtra("data", loginResponse)
+                        );
+                        finish();
+                    }
+
                     loggedInId = Integer.parseInt(loginResponse.getId());
                     SharedPreferences.Editor editor = sharedPref.edit();
                     editor.putInt("userId", loggedInId);
@@ -100,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                             .putExtra("data", loginResponse)
                     );
                     finish();
+
                 }
                 else {
                     String message = "Prijava ni uspela. Prosimo poskusite še enkrat.";
