@@ -108,10 +108,11 @@ public class GalleryActivity extends AppCompatActivity{
 
         for (int i = 0; i < 5; i++) {
             ImageView slika = new ImageView(context);
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,800 ); //slike 600x800
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(1000, 1200); //slike 600x800
             lp.setMargins(0,0,0,10);
             slika.setLayoutParams(lp);
-            Glide.with(context).load("http://192.168.0.17:8000/storage/documents/" +id+ "/"+i+".jpg").into(slika);
+
+            Glide.with(context).load("http://192.168.0.17:8000/storage/documents/" +id+ "/"+i+".jpg").error("http://192.168.0.17:8000/storage/documents/0/1.png").into(slika);
             slikice.addView(slika);
         }
 
