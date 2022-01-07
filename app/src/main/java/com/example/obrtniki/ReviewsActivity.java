@@ -2,14 +2,17 @@ package com.example.obrtniki;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,12 +30,17 @@ import retrofit2.Response;
 
 public class ReviewsActivity extends AppCompatActivity{
     //iz api dobim podatke, ki jih vnesem na linearni layout
+    NestedScrollView scrollView;
     LinearLayout seznam;
     int id;
     int userid;
     Button dodaj, dodajz;
     EditText mnenje;
     Spinner zvezde;
+    TextView mz,z;
+    List<Integer> IDofcomments= new ArrayList<>();
+    List<Integer> IDofrattings = new ArrayList<>();
+    String name;
 
     public static Context context;
 
@@ -48,6 +56,9 @@ public class ReviewsActivity extends AppCompatActivity{
             userid = intent.getIntExtra("userId",0);
         }
 
+        SharedPreferences sp = getApplicationContext().getSharedPreferences("preferences", Context.MODE_PRIVATE);
+        name = sp.getString("name","");
+
 
         context = getApplicationContext();
         seznam=findViewById(R.id.layoutmnenja);
@@ -55,6 +66,9 @@ public class ReviewsActivity extends AppCompatActivity{
         mnenje=findViewById(R.id.editmnenje);
         zvezde=findViewById(R.id.spinnerzvezde);
         dodajz=findViewById(R.id.dodajzvezde);
+        mz=findViewById(R.id.dodajm);
+        z=findViewById(R.id.naslovzvezd);
+        scrollView=findViewById(R.id.nestedScroll);
 
         String [] zvezda = {"1","2","3","4","5"};
 
@@ -92,9 +106,7 @@ public class ReviewsActivity extends AppCompatActivity{
 
         //seznam.setNestedScrollingEnabled(false);
         getReviews();
-
-
-
+        getRatings();
 
     }
 
@@ -106,14 +118,14 @@ public class ReviewsActivity extends AppCompatActivity{
             public void onResponse(Call<List<ReviewsResponse>> call, Response<List<ReviewsResponse>> response) {
                 if (response.isSuccessful()) {
 
-                    String message = "Obrtnik najden.";
+                    String message = "";
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     List<ReviewsResponse> reviewsResponse= response.body();
 
                     assert reviewsResponse != null;
                     for(ReviewsResponse res: reviewsResponse){
                         TextView mnenje = new TextView(context);
-                        mnenje.setText(res.getComment());
+                        mnenje.setText(res.getComment()+" -"+res.getUser_name());
                         LinearLayout.LayoutParams params = new
                                 LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                                 LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -122,10 +134,21 @@ public class ReviewsActivity extends AppCompatActivity{
                         mnenje.setTextSize(16);
                         mnenje.setTextColor(Color.BLACK);
                         seznam.addView(mnenje);
+                        IDofcomments.add(res.getUser_id());
+                    }
+
+                    for (int i = 0; i < IDofcomments.size(); i++) {
+                        if(IDofcomments.get(i)==userid){
+                            Toast.makeText(context, "Vaše mnenje je že bilo oddano.", Toast.LENGTH_LONG).show();
+                            mz.setVisibility(View.GONE);
+                            dodaj.setVisibility(View.INVISIBLE);
+                            mnenje.setVisibility(View.GONE);
+
+                        }
                     }
                 }
                 else {
-                    String message = "Obrnik ni bil najdem. Napaka na omrežju.";
+                    String message = "";
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                 }
             }
@@ -154,7 +177,7 @@ public class ReviewsActivity extends AppCompatActivity{
                     AddReviewResponse addReviewResponse = response.body();
 
                     TextView m = new TextView(context);
-                    m.setText(mnenje.getText());
+                    m.setText(mnenje.getText()+" -"+name);
                     LinearLayout.LayoutParams params = new
                             LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -163,8 +186,10 @@ public class ReviewsActivity extends AppCompatActivity{
                     m.setTextSize(16);
                     m.setTextColor(Color.BLACK);
                     seznam.addView(m);
-
                     mnenje.setText("");
+                    mz.setVisibility(View.GONE);
+                    dodaj.setVisibility(View.INVISIBLE);
+                    mnenje.setVisibility(View.GONE);
 
 
                 }
@@ -193,6 +218,9 @@ public class ReviewsActivity extends AppCompatActivity{
                     Toast.makeText(context, message, Toast.LENGTH_LONG).show();
                     AddRatingResponse addRatingResponse = response.body();
                     zvezde.setSelection(0);
+                    z.setVisibility(View.GONE);
+                    dodajz.setVisibility(View.GONE);
+                    zvezde.setVisibility(View.GONE);
 
                 }
                 else {
@@ -208,6 +236,48 @@ public class ReviewsActivity extends AppCompatActivity{
             }
         });
 
+    }
+
+    void getRatings(){
+        Call<List<ReviewsRatingResponse>> reviewsRatingResponseCall = ApiClient.getService().craftsmenRatings(id);
+        reviewsRatingResponseCall.enqueue(new Callback<List<ReviewsRatingResponse>>() {
+            @Override
+            public void onResponse(Call<List<ReviewsRatingResponse>> call, Response<List<ReviewsRatingResponse>> response) {
+                if (response.isSuccessful()) {
+
+                    //String message = "Ocena je že bila oddana.";
+                    //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                    List<ReviewsRatingResponse> reviewsResponse= response.body();
+
+                    assert reviewsResponse != null;
+                    for(ReviewsRatingResponse res: reviewsResponse){
+                        IDofrattings.add(res.getUser_id());
+                    }
+
+                    for (int i = 0; i < IDofrattings.size(); i++) {
+                        if(IDofrattings.get(i)==userid){
+                            Toast.makeText(context, "Vaša ocena je že bila oddana.", Toast.LENGTH_LONG).show();
+                            z.setVisibility(View.GONE);
+                            dodajz.setVisibility(View.GONE);
+                            zvezde.setVisibility(View.GONE);
+
+                        }
+
+                    }
+                }
+                else {
+                    String message = " Napaka na omrežju.";
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ReviewsRatingResponse>> call, Throwable t) {
+                String message = t.getLocalizedMessage();
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 
 

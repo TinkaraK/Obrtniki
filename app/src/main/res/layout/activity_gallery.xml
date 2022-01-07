@@ -20,7 +20,7 @@
     <ImageSwitcher
         android:id="@+id/Images"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_margin="10dp"
         android:layout_below="@id/textview"
         />
@@ -50,4 +50,22 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:text="Izberi slike" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_izberi_slike">
+
+        <LinearLayout
+            android:id="@+id/layoutslik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 </RelativeLayout>

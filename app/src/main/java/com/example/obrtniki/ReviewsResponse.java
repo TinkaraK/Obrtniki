@@ -8,6 +8,7 @@ public class ReviewsResponse implements Serializable {
     private String created_at;
     private String updated_at;
     private int user_id;
+    private String user_name;
     private int craftsman_id;
 
     public int getId() {
@@ -58,4 +59,11 @@ public class ReviewsResponse implements Serializable {
         this.craftsman_id = craftsman_id;
     }
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
 }

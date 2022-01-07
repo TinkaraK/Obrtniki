@@ -97,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                         loggedInId = Integer.parseInt(loginResponse.getId());
                         SharedPreferences.Editor editor = sharedPref.edit();
                         editor.putInt("userId", loggedInId);
+                        editor.putString("name",loginResponse.getFirst_name());
                         editor.apply();
                         startActivity(new Intent(context, TradeTypesListActivity.class)
                                 .putExtra("data", loginResponse)

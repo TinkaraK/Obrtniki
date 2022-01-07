@@ -59,8 +59,8 @@ public class RecyclerViewAdapterObrtniki extends RecyclerView.Adapter<RecyclerVi
         holder.regija.setText(regijeA[mData.get(position).getRegion_id()-1]);
 
         Glide.with(mContext)
-                .load("http://192.168.100.12:8000/storage/documents/" + mData.get(position).getId() + "/0.jpg")
-                .error("http://192.168.100.12:8000/storage/documents/0/0.jpg")
+                .load("http://192.168.0.17:8000/storage/documents/" + mData.get(position).getId() + "/0.jpg")
+                .error("http://192.168.0.17:8000/storage/documents/0/0.jpg")
                 .into(holder.img);
 
         /*holder.rating.setOnClickListener(new View.OnClickListener() {
