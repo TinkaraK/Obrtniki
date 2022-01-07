@@ -17,45 +17,13 @@
         android:textSize="30sp" />
 
 
-    <ImageSwitcher
-        android:id="@+id/Images"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        android:layout_below="@id/textview"
-        />
 
-    <Button
-        android:id="@+id/button_prejsna"
-        android:text="Prejšna"
-        android:layout_below="@id/Images"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"/>
-
-    <Button
-        android:id="@+id/button_naslednja"
-        android:text="Naslednja"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Images"
-        android:layout_alignParentEnd="true"
-        android:backgroundTint="@color/black"/>
-
-    <Button
-        android:id="@+id/button_izberi_slike"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_prejsna"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/black"
-        android:text="Izberi slike" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScroll2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_izberi_slike">
+        android:layout_below="@+id/textview">
 
         <LinearLayout
             android:id="@+id/layoutslik"
